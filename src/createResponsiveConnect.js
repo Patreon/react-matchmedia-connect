@@ -8,7 +8,7 @@ const defaultBreakpoints = {
     lg: 1200
 };
 
-export default function createResponsiveConnect(breakpoints = defaultBreakpoints) {
+export default function createResponsiveConnect(breakpoints = defaultBreakpoints, matchMediaOptions) {
     const breakpointsList = [];
     const queryMap = {
         isLandscape: '(orientation: landscape)',
@@ -42,5 +42,5 @@ export default function createResponsiveConnect(breakpoints = defaultBreakpoints
         }
     });
 
-    return createMatchMediaConnect(queryMap);
+    return createMatchMediaConnect(queryMap, matchMediaOptions);
 }
